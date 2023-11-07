@@ -84,7 +84,7 @@ Step 5: **Install PM2**
 
 Step 6: **Cloned My Project Repository**
 
-```
+
    git clone https://github.com/sanjeevbrok99/book_store_api.git
    cd book_store_api
    cd src
