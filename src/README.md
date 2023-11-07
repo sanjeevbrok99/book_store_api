@@ -36,11 +36,11 @@ yarn dev
 
 - `GET http://3.110.179.29:8000/books/getAll`: Retrieve a list of all books in the database.
 
-- `GET http://3.110.179.29:8000/books/:id`: Retrieve details of a specific book by its ID.
+- `GET http://3.110.179.29:8000/books/getBook/:id`: Retrieve details of a specific book by its ID.
 
-- `PUT http://3.110.179.29:8000/books/:id`: Update a book's details by its ID using a JSON request body.
+- `PUT http://3.110.179.29:8000/books/update/:id`: Update a book's details by its ID using a JSON request body.
 
-- `DELETE http://3.110.179.29:8000/books/:id`: Delete a book by its ID.
+- `DELETE http://3.110.179.29:8000/books/delete/:id`: Delete a book by its ID.
 
 ## Assumptions and Design Choices
 
