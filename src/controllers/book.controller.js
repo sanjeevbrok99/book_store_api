@@ -8,7 +8,7 @@ export const createBook = async (req, res) => {
       res.status(201).json(book);
     } catch (error) {
         console.log(error)
-      res.status(400).json({ error: error.message });
+      res.status(400).json({ error: error.message,err:error });
     }
   };
 
@@ -20,7 +20,7 @@ export const listAllBook =  async (req, res) => {
       res.status(200).json(books);
     } catch (error) {
         console.log(error)
-      res.status(500).json({ error: 'Internal Server error' });
+      res.status(500).json({ error: 'Internal Server error',err:error });
     }
   };
 
@@ -35,7 +35,7 @@ export const getBookById =  async (req, res) => {
       res.status(200).json(book);
     } catch (error) {
         console.log(error)
-      res.status(500).json({ error: 'Internal Server error' });
+      res.status(500).json({ error: 'Internal Server error' ,err:error});
     }
   };
 
@@ -45,12 +45,12 @@ export const getBookById =  async (req, res) => {
     try {
       const book = await Book.findByIdAndUpdate(req.params.id, req.body, { new: true });
       if (!book) {
-        return res.status(404).json({ error: 'Book not found' });
+        return res.status(404).json({ error: 'Book not found',err:error });
       }
       res.status(200).json(book);
     } catch (error) {
         console.log(error)
-      res.status(500).json({ error: 'Internal Server error' });
+      res.status(500).json({ error: 'Internal Server error',err:error });
     }
   };
 
@@ -58,10 +58,10 @@ export const deleteBook = async (req, res) => {
     try {
       const book = await Book.findByIdAndRemove(req.params.id);
       if (!book) {
-        return res.status(404).json({ error: 'Book not found' });
+        return res.status(404).json({ error: 'Book not found',err:error });
       }
       res.status(204).send();
     } catch (error) {
-      res.status(500).json({ error: 'Server error' });
+      res.status(500).json({ error: 'Internal Server error' });
     }
   };

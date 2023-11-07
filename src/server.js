@@ -11,7 +11,7 @@ connectDB();
 app.use(express.json({ extended: false }));
 app.use(logger("dev"));
 
-app.use("users", );
+app.use("/books",bookRoutes);
 
 // Server Setup
 const PORT = process.env.PORT || 5000;
