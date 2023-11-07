@@ -7,7 +7,17 @@ export const createBook = async (req, res) => {
       
       res.status(201).json(book);
     } catch (error) {
+        console.log(error)
       res.status(400).json({ error: error.message });
     }
   };
 
+export const listAllBook =  async (req, res) => {
+    try {
+      const books = await Book.find();
+      res.status(200).json(books);
+    } catch (error) {
+        console.log(error)
+      res.status(500).json({ error: 'Internal Server error' });
+    }
+  };
