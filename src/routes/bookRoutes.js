@@ -3,16 +3,18 @@ import {
    createBook,
    listAllBook,
    getBookById,
-   updateBook
+   updateBook,
+   deleteBook
   } from "../controllers/book.controller.js";
 
   
   const router = express.Router();
   
   router.route('/create').post(createBook)
-  router.route('/getAll').get(createBook)
-  router.route('/getBook/:id').get(createBook)
+  router.route('/getAll').get(listAllBook)
+  router.route('/getBook/:id').get(getBookById)
 
-  router.route('/update/:id').put(createBook)
+  router.route('/update/:id').put(updateBook)
+  router.route('/delete/:id').put(deleteBook)
 
   export default router;
