@@ -4,10 +4,14 @@ dotenv.config({ path: "./config/config.env" });
 import connectDB from "./config/db.js";
 import logger from "morgan";
 import colors from "colors";
+import bookRoutes from "./routes/bookRoutes.js";
+
 const app = express();
 connectDB();
 app.use(express.json({ extended: false }));
 app.use(logger("dev"));
+
+app.use("users", );
 
 // Server Setup
 const PORT = process.env.PORT || 5000;
