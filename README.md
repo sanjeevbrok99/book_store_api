@@ -60,7 +60,7 @@ In this section, I'll guide you through the process of deploying the Book Manage
 
 Begin by connecting to My AWS EC2 instance using the following SSH command:
 
-```bash
+
 ssh -i "equartis.pem" ubuntu@ec2-3-110-179-29.ap-south-1.compute.amazonaws.com
 
 
