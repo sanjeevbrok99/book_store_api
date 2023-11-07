@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "backend",
+            "name": "bookstore",
             "script":"yarn",
             "args": "dev",
             "interpreter": "none",
