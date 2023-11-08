@@ -12,7 +12,9 @@ app.use(express.json({ extended: false }));
 app.use(logger("dev"));
 
 app.use("/books",bookRoutes);
-
+app.get("/", (req, res) => {
+  res.send("Hello, This is Book Managment Store server!");
+});
 // Server Setup
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
