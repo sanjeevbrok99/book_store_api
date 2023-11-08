@@ -57,11 +57,13 @@ export const getBookById =  async (req, res) => {
 export const deleteBook = async (req, res) => {
     try {
       const book = await Book.findByIdAndDelete(req.params.id);
+      console.log(book)
       if (!book) {
         return res.status(404).json({ error: 'Book not found',err:error });
       }
-      res.status(204).send();
+      res.status(200).json({ message: "Book Deleted Succesfully"});
     } catch (error) {
-      res.status(500).json({ error: 'Internal Server error' });
+      console.log(error)
+      res.status(500).json({ error: 'Internal Server error' ,err:error});
     }
   };
