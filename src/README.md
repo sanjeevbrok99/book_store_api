@@ -40,6 +40,13 @@ yarn dev
 
 - `PUT http://3.110.179.29:8000/books/update/:id`: Update a book's details by its ID using a JSON request body.
 
+- request body example:
+{
+  "title": "Valhalla",
+  "author": "Michael",
+  "summary": "A historical drama television series that portrays Ragnar Lothbrok, a legendary Norse hero and explores the Viking age."
+}
+
 - `DELETE http://3.110.179.29:8000/books/delete/:id`: Delete a book by its ID.
 
 ## Assumptions and Design Choices
@@ -60,11 +67,11 @@ In this section, I'll guide you through the process of deploying the Book Manage
 
 Begin by connecting to My AWS EC2 instance using the following SSH command:
 
-
 ssh -i "equartis.pem" ubuntu@ec2-3-110-179-29.ap-south-1.compute.amazonaws.com
 
 
 Step 2: **Update and Upgrade System Packages**
+
  - sudo apt update
  - sudo apt upgrade
 
@@ -84,7 +91,6 @@ Step 5: **Install PM2**
 
 Step 6: **Cloned My Project Repository**
 
-```
    git clone https://github.com/sanjeevbrok99/book_store_api.git
    cd book_store_api
    cd src
@@ -93,10 +99,12 @@ Step 7: **Installed Project Dependencies**
  - yarn
 
  Step 8: **Started My Application with PM2**
+
 - I have Started my Node.js application with PM2 to ensure it runs continuously in the background
 - pm2 start app.config.json
 
 Step 9: **Opened Port 8000**
+
 To open port 8000 and allow access to my application, i have configured my AWS security group to permit incoming traffic on this port.
 
 

@@ -15,6 +15,6 @@ import {
   router.route('/getBook/:id').get(getBookById)
 
   router.route('/update/:id').put(updateBook)
-  router.route('/delete/:id').put(deleteBook)
+  router.route('/delete/:id').delete(deleteBook)
 
   export default router;
